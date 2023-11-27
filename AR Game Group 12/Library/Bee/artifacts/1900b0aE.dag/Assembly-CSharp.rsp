@@ -400,6 +400,7 @@
 -analyzer:"D:/Unity Editor/2022.3.10f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/ExampleAssets/Scripts/AnchorCreator.cs"
 "Assets/ExampleAssets/Scripts/ARFeatheredPlaneMeshVisualizer.cs"
+"Assets/Scripts/TrackedImageInfo.cs"
 -langversion:9.0
 
 /deterministic
