@@ -427,10 +427,15 @@
 "Assets/ExampleAssets/Scripts/AnchorCreator.cs"
 "Assets/ExampleAssets/Scripts/ARFeatheredPlaneMeshVisualizer.cs"
 "Assets/Scripts/CardManager.cs"
+"Assets/Scripts/CardPickupController.cs"
 "Assets/Scripts/Cards.cs"
+"Assets/Scripts/CardSlot.cs"
+"Assets/Scripts/DragDrop.cs"
 "Assets/Scripts/FoodCard.cs"
 "Assets/Scripts/HealthScale.cs"
+"Assets/Scripts/IDrag.cs"
 "Assets/Scripts/SceneLoader.cs"
+"Assets/Scripts/ScoreCounter.cs"
 "Assets/Scripts/TrackedImageInfo.cs"
 -langversion:9.0
 

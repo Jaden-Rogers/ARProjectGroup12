@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Draggable
+  - PlayerCard
+  - EnemyCard
+  - CardPlacementSpot
   layers:
   - Default
   - TransparentFX
@@ -11,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Draggable
   - 
   - 
   - 
@@ -46,4 +50,7 @@ TagManager:
     locked: 0
   - name: GameObjects
     uniqueID: 3344230719
+    locked: 0
+  - name: UI
+    uniqueID: 1481589643
     locked: 0
