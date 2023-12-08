@@ -22,6 +22,8 @@ public class CardAttack : MonoBehaviour
 
     public bool canDamage;
 
+    private Transform p1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,16 @@ public class CardAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
+
+
+
+
+
+
 
         if (enemyActiveTurn == true && card.enemyCard == true)
         {
@@ -71,6 +83,9 @@ public class CardAttack : MonoBehaviour
     private void UpdateCardUpdate()
     {
         card = gameObject.GetComponent<FoodCard>();
+
+        p1 = GameObject.FindGameObjectWithTag("P1").transform.GetChild(0);
+
     }
 
     private void CanDamage()
