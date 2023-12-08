@@ -31,4 +31,5 @@ public class CardPickupController : MonoBehaviour, IBeginDragHandler, IDragHandl
         image.raycastTarget = true;
 
     }
+
 }

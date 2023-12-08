@@ -40,6 +40,15 @@ public class FoodCard : MonoBehaviour
 
     private void Update()
     {
+
+        // Check if the parent exists
+        if (transform.parent != null && tag != null)
+        {
+            // Get the tag of the parent and assign it to the child
+            string parentTag = transform.parent.tag;
+            gameObject.tag = parentTag;
+        }
+
         if (cardHealth <= 0)
         {
             Destroy(gameObject);
@@ -63,13 +72,5 @@ public class FoodCard : MonoBehaviour
         cardHealth -= damage;
     }
 
-    public void EnemyCardDamage(int damage)
-    {
 
-    }
-
-    public void EnemyPlayerDamage(int damage)
-    {
-
-    }
 }
