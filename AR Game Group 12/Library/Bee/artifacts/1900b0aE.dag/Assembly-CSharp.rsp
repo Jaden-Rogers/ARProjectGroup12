@@ -443,6 +443,7 @@
 "Assets/Scripts/FoodCard.cs"
 "Assets/Scripts/HealthScale.cs"
 "Assets/Scripts/IDrag.cs"
+"Assets/Scripts/ImageTracking.cs"
 "Assets/Scripts/SceneLoader.cs"
 "Assets/Scripts/Score.cs"
 "Assets/Scripts/ScoreCounter.cs"
