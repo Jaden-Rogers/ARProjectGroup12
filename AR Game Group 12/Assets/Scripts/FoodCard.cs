@@ -22,25 +22,13 @@ public class FoodCard : MonoBehaviour
 
     private void Start()
     {
-        // Ensure that the childText reference is not null
-        if (cardHealthUI != null)
-        {
-            // Set the text of the child Text component to the integer value
-            cardHealthUI.text = cardHealth.ToString();
-            cardDamageUI.text = cardDamage.ToString();
-            cardCostUI.text = cardCost.ToString();
-        }
-        else
-        {
-            // Log an error if the childText reference is null
-            Debug.LogError("Child Text component reference is not set!");
-        }
+        UpdateCardUI();
     }
 
 
     private void Update()
     {
-
+        
         // Check if the parent exists
         if (transform.parent != null && tag != null)
         {
@@ -48,9 +36,13 @@ public class FoodCard : MonoBehaviour
             string parentTag = transform.parent.tag;
             gameObject.tag = parentTag;
         }
+        
+
+        UpdateCardUI();
 
         if (cardHealth <= 0)
         {
+            transform.parent.GetComponent<CardSlot>().EmptyClear();
             Destroy(gameObject);
             Debug.Log(cardName + "has fallen!");
         }
@@ -72,5 +64,21 @@ public class FoodCard : MonoBehaviour
         cardHealth -= damage;
     }
 
+    public void UpdateCardUI()
+    {
+        // Ensure that the childText reference is not null
+        if (cardHealthUI != null)
+        {
+            // Set the text of the child Text component to the integer value
+            cardHealthUI.text = cardHealth.ToString();
+            cardDamageUI.text = cardDamage.ToString();
+            cardCostUI.text = cardCost.ToString();
+        }
+        else
+        {
+            // Log an error if the childText reference is null
+            Debug.LogError("Child Text component reference is not set!");
+        }
+    }
 
 }

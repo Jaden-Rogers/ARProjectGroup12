@@ -5,48 +5,28 @@ using UnityEngine.UI;
 
 public class CardAttack : MonoBehaviour
 {
-    private FoodCard card;
     private HealthScale healthScale;
     private EnemyCardManager cardManager;
-
-    //public Transform firePoint;
-
-    //public GameObject enemyBulletPrefab;
-    //public GameObject bulletPrefab;
 
     public bool enemyActiveTurn = false;
     public bool playerActiveTurn = false;
 
-    public int playerNumber;
-    public int enemyNumber;
-
-    public bool canDamage;
-
-    private Transform p1;
-
+    [SerializeField] private FoodCard[] enemyCards = new FoodCard[4];
+    [SerializeField] private FoodCard[] playerCards = new FoodCard[4];
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateCardUpdate();
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        //SetEnemyCard(enemyCards[4], 4);
 
-
-
-
-
-
-
-
-
-
-        if (enemyActiveTurn == true && card.enemyCard == true)
+        if (enemyActiveTurn == true)
         {
             EnemyAttack();
         }
@@ -55,7 +35,7 @@ public class CardAttack : MonoBehaviour
             //cardManager.canPlay = false;
         }
 
-        if (playerActiveTurn == true && card.enemyCard == false)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayerAttack();
         }
@@ -63,52 +43,41 @@ public class CardAttack : MonoBehaviour
 
     public void EnemyAttack()
     {
-        if (CompareTag("EnemyCard") && canDamage == true) ;
+        // Perform enemy attacks
+        for (int i = 0; i < 4; i++)
         {
-            card.TakeDamage(card.cardDamage);
-            UpdateCardUpdate();
+            if (playerCards[i] != null && enemyCards[i] != null)
+            {
+                playerCards[i].cardHealth -= enemyCards[i].cardDamage;
+            }
+            
         }
 
     }
 
     public void PlayerAttack()
     {
-        if (CompareTag("PlayerCard") && canDamage == true) ;
+        // Perform player attacks
+        for (int i = 0; i < 4; i++)
         {
-            card.TakeDamage(card.cardDamage);
-            UpdateCardUpdate();
-        }
-    }
-
-    private void UpdateCardUpdate()
-    {
-        card = gameObject.GetComponent<FoodCard>();
-
-        p1 = GameObject.FindGameObjectWithTag("P1").transform.GetChild(0);
-
-    }
-
-    private void CanDamage()
-    {
-        // Get the corresponding enemy
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemySlot");
-        GameObject targetEnemy = null;
-
-        foreach (var enemy in enemies)
-        {
-            CardAttack enemyDamageSystem = enemy.GetComponent<CardAttack>();
-            if (enemyDamageSystem != null && enemyDamageSystem.enemyNumber == playerNumber)
+            if (playerCards[i] != null && enemyCards[i] != null)
             {
-                targetEnemy = enemy;
-                canDamage = true;
-                break;
-                
+                enemyCards[i].cardHealth -= playerCards[i].cardDamage;
             }
-            else
-            {
-                canDamage = false;
-            }
+            
         }
 
     }
+
+    public void SetEnemyCard(FoodCard card, int index)
+    {
+
+        enemyCards[index] = card;
+    }
+    public void SetPlayerCard(FoodCard card, int index)
+    {
+
+        playerCards[index] = card;
+    }
+
 }

@@ -418,7 +418,6 @@ GameObject:
   - component: {fileID: 114483248667088361}
   - component: {fileID: 1832383870631412921}
   - component: {fileID: 3551550152845105233}
-  - component: {fileID: 4884284796250490205}
   - component: {fileID: 7462116504921883188}
   - component: {fileID: 6275900328260138013}
   m_Layer: 5
@@ -523,23 +522,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 114483248667088361}
   parentAfterDrag: {fileID: 0}
---- !u!114 &4884284796250490205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9200355211498127899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26be024c85ae0e4e802ab2ae20d4fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyActiveTurn: 0
-  playerActiveTurn: 0
-  playerNumber: 0
-  enemyNumber: 0
-  canDamage: 0
 --- !u!61 &7462116504921883188
 BoxCollider2D:
   m_ObjectHideFlags: 0

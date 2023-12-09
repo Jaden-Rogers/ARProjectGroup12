@@ -16,6 +16,7 @@ public class CardPickupController : MonoBehaviour, IBeginDragHandler, IDragHandl
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
+        parentAfterDrag.GetComponent<CardSlot>().EmptyClear();
     }
 
     public void OnDrag(PointerEventData eventData)
